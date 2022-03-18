@@ -12,6 +12,11 @@ this is the link of the  style of  landing page of e-com !
     background-color: white;
     padding: 0.4rem;
     border-radius: 50%;
+    margin-left: 0.5rem;
+}
+
+.search-bar i:hover {
+    color: var(--hotpink);
 }
 
 .icon-badge {
@@ -29,6 +34,11 @@ this is the link of the  style of  landing page of e-com !
     color: var(--white);
     margin-right: 1.1rem;
     font-size: 1.7rem;
+    cursor: pointer;
+}
+
+.hamburger:hover {
+    color: var(--hotpink);
 }
 
 .navlink {
@@ -38,7 +48,7 @@ this is the link of the  style of  landing page of e-com !
 .side-nav-menu {
     position: fixed;
     height: 100vh;
-    width: 13rem;
+    width: 14rem;
     background-color: var(--nav-color);
     transition: 0.5s ease-in-out;
     z-index: 10;
@@ -56,7 +66,7 @@ this is the link of the  style of  landing page of e-com !
 .sidebar-logo {
     font-size: 1.5rem;
     font-weight: 800;
-    margin: 2rem 1rem 1rem 0rem;
+    margin: 1rem 1rem 1rem 0rem;
     color: var(--pink);
     border-left: 3px solid var(--yellow);
     border-top: 5px solid var(--red);
@@ -73,7 +83,7 @@ this is the link of the  style of  landing page of e-com !
 }
 
 .sidebar-navlink li:hover {
-    color: var(--tertiary);
+    color: var(--primary);
 }
 
 .sidebar-navlink li i {

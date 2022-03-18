@@ -1,5 +1,5 @@
 import "./components/navbar/navbar.css";
-// import {LandingPage} from "./pages/landing-page.jsx"
+import {LandingPage} from "./pages/landing-page.jsx"
 
 import { Navbar } from "./components/navbar/navbar.js";
 function App() {
@@ -9,6 +9,7 @@ function App() {
 
       <div>
         <Navbar />
+        <LandingPage />
       </div>
     </div>
   );
