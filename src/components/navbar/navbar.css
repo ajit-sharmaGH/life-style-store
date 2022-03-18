@@ -1,0 +1,107 @@
+/* this is the link of the navbar other than the home page
+ @import url("https://ecom-lifestyle-store.netlify.app/CSS/base/navbar.css");
+  */
+
+
+/*
+this is the link of the  style of  landing page of e-com !
+*/
+
+@import url("https://ecom-lifestyle-store.netlify.app/style.css");
+.search-bar i {
+    background-color: white;
+    padding: 0.4rem;
+    border-radius: 50%;
+}
+
+.icon-badge {
+    position: relative;
+    background-color: var(--red);
+    padding: 0 0.3rem;
+    top: -0.8rem;
+    left: -0.5rem;
+    border-radius: 50%;
+    font-weight: 600;
+}
+
+.hamburger {
+    display: none;
+    color: var(--white);
+    margin-right: 1.1rem;
+    font-size: 1.7rem;
+}
+
+.navlink {
+    margin-right: 0rem;
+}
+
+.side-nav-menu {
+    position: fixed;
+    height: 100vh;
+    width: 13rem;
+    background-color: var(--nav-color);
+    transition: 0.5s ease-in-out;
+    z-index: 10;
+    box-shadow: 1px 3px 8px var(--dark-primary);
+    border-bottom-right-radius: 1rem;
+}
+
+.sidebar-navlink {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 1rem;
+}
+
+.sidebar-logo {
+    font-size: 1.5rem;
+    font-weight: 800;
+    margin: 2rem 1rem 1rem 0rem;
+    color: var(--pink);
+    border-left: 3px solid var(--yellow);
+    border-top: 5px solid var(--red);
+    display: inline-block;
+}
+
+.sidebar-navlink li {
+    margin: 0.8rem;
+    color: var(--white);
+    width: 8rem;
+    padding: 0.3rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+}
+
+.sidebar-navlink li:hover {
+    color: var(--tertiary);
+}
+
+.sidebar-navlink li i {
+    margin-right: 1rem;
+    font-size: 1.2rem;
+}
+
+@media screen and (max-width:992px) {
+    .navlink {
+        display: none;
+    }
+    .header-part {
+        width: 100vw;
+    }
+    .hamburger {
+        display: block;
+    }
+    .search-bar>input {
+        width: 20rem;
+    }
+}
+
+@media screen and (max-width:600px) {
+    .logo {
+        display: none;
+    }
+    .search-bar>input {
+        max-width: 13rem;
+        margin-left: 1rem;
+    }
+}
