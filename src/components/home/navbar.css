@@ -54,6 +54,11 @@ this is the link of the  style of  landing page of e-com !
     z-index: 10;
     box-shadow: 1px 3px 8px var(--dark-primary);
     border-bottom-right-radius: 1rem;
+    transform: translateX(-15.5rem);
+}
+
+.side-nav-menu-active {
+    transform: translateX(0rem);
 }
 
 .sidebar-navlink {
@@ -106,12 +111,19 @@ this is the link of the  style of  landing page of e-com !
     }
 }
 
+@media screen and (min-width:992px) {
+    .side-nav-menu {
+        visibility: hidden;
+        transition: 0.5s ease-in-out;
+    }
+}
+
 @media screen and (max-width:600px) {
     .logo {
         display: none;
     }
     .search-bar>input {
-        max-width: 13rem;
+        min-width: 13rem;
         margin-left: 1rem;
     }
 }

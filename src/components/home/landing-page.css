@@ -1,0 +1,19 @@
+@import url("https://ecom-lifestyle-store.netlify.app/style.css");
+.mt-3 {
+    margin-top: 3rem;
+}
+
+.lading_page-img {
+    margin-top: 3.5rem;
+    height: calc(100vh - 0.5rem) !important;
+}
+
+.sub-headings {
+    color: var(--nav-color);
+}
+
+.banner_sub-headings {
+    color: var(--white);
+    font-size: 1.2rem;
+    font-weight: 800;
+}
