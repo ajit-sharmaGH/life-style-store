@@ -12,12 +12,17 @@ this is the link of the  style of  landing page of e-com !
     background-color: white;
     padding: 0.4rem;
     border-radius: 50%;
+    margin-left: 0.5rem;
+}
+
+.search-bar i:hover {
+    color: var(--hotpink);
 }
 
 .icon-badge {
     position: relative;
     background-color: var(--red);
-    padding: 0 0.3rem;
+    padding: 0 0.2rem;
     top: -0.8rem;
     left: -0.5rem;
     border-radius: 50%;
@@ -29,6 +34,11 @@ this is the link of the  style of  landing page of e-com !
     color: var(--white);
     margin-right: 1.1rem;
     font-size: 1.7rem;
+    cursor: pointer;
+}
+
+.hamburger:hover {
+    color: var(--hotpink);
 }
 
 .navlink {
@@ -38,12 +48,17 @@ this is the link of the  style of  landing page of e-com !
 .side-nav-menu {
     position: fixed;
     height: 100vh;
-    width: 13rem;
+    width: 14rem;
     background-color: var(--nav-color);
     transition: 0.5s ease-in-out;
     z-index: 10;
     box-shadow: 1px 3px 8px var(--dark-primary);
     border-bottom-right-radius: 1rem;
+    transform: translateX(-15.5rem);
+}
+
+.side-nav-menu-active {
+    transform: translateX(0rem);
 }
 
 .sidebar-navlink {
@@ -56,7 +71,7 @@ this is the link of the  style of  landing page of e-com !
 .sidebar-logo {
     font-size: 1.5rem;
     font-weight: 800;
-    margin: 2rem 1rem 1rem 0rem;
+    margin: 1rem 1rem 1rem 0rem;
     color: var(--pink);
     border-left: 3px solid var(--yellow);
     border-top: 5px solid var(--red);
@@ -73,7 +88,7 @@ this is the link of the  style of  landing page of e-com !
 }
 
 .sidebar-navlink li:hover {
-    color: var(--tertiary);
+    color: var(--primary);
 }
 
 .sidebar-navlink li i {
@@ -96,12 +111,19 @@ this is the link of the  style of  landing page of e-com !
     }
 }
 
+@media screen and (min-width:992px) {
+    .side-nav-menu {
+        visibility: hidden;
+        transition: 0.5s ease-in-out;
+    }
+}
+
 @media screen and (max-width:600px) {
     .logo {
         display: none;
     }
     .search-bar>input {
-        max-width: 13rem;
+        max-width: 14rem;
         margin-left: 1rem;
     }
 }
