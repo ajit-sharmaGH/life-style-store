@@ -123,7 +123,7 @@ this is the link of the  style of  landing page of e-com !
         display: none;
     }
     .search-bar>input {
-        min-width: 10rem;
+        max-width: 14rem;
         margin-left: 1rem;
     }
 }
