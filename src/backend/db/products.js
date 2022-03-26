@@ -86,7 +86,7 @@ export const products = [
     },
     {
       _id: uuid(),
-      title: "Try Clothes",
+      title: "Try Shoes",
       author: "",
       discountPrice: 400,
       originalPrice: 5000,
