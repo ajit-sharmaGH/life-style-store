@@ -1,12 +1,14 @@
 @import url("https://ecom-lifestyle-store.netlify.app/CSS/base/sidebar.css");
-.sidebar-link-active {
+
+/* .sidebar-link-active {
     position: absolute !important;
     z-index: 2;
     margin-top: 4rem;
-}
+} */
 
-@media screen and (max-width:768px) {
+
+/* @media screen and (max-width:768px) {
     .sidebar-link-active {
         display: none;
     }
-}
+} */

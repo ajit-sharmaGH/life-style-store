@@ -1,12 +1,16 @@
+import './productsPage.css';
+
 import { ProductsNav } from "../../components/products/productsNav.js";
-import { ProductsComponent } from "../../components/products/productsCard.jsx";
-import { ProductsFilter } from '../../components/products/productsFilter.jsx';
+import { ProductsCard } from "../../components/products/productsCard.jsx";
+import { ProductsFilter } from '../../components/productsFilter/productsFilter.jsx';
 const Products = () => {
   return (
     <div>
       <ProductsNav />
+      <div className="products_filter_display-flex">
       <ProductsFilter />
-      <ProductsComponent />
+      <ProductsCard />
+      </div>
      
     </div>
   );
