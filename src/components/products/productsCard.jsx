@@ -32,12 +32,20 @@ const ProductsCard = () => {
               alt=""
             />
             <h2 className="card_heading">{products.title}</h2> 
+            <div className="flex-wrap">
             <p className="card_sub-heading">
               Rs/{products.originalPrice}
               </p>
             <p className="card_sub-text">
-             off-{products.discountPrice}
+            <strike> off-{products.discountPrice}</strike>
               
+            </p>
+           
+            </div>
+            <p className="card_sub-text card_rating-styles">
+             {products.rating}
+
+              <i className="fa-solid fa-star"> </i>
             </p>
             <div className="card_btn">
               <button className="btn-primary">Add to Cart</button>
