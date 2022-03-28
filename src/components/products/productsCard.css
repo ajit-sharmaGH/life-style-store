@@ -9,13 +9,14 @@
     background-color: var(--white);
     border-radius: 5px;
     height: auto;
+    position: relative;
 }
 
 .product-card_container-images {
     height: 18rem;
     width: 100%;
     background-size: cover;
-    border: 10px solid var(--white);
+    border: 1px solid var(--white);
     border-radius: 5px;
 }
 
@@ -26,7 +27,6 @@
     margin-left: 1rem;
 }
 
-.card_sub-text,
 .card_sub-heading {
     color: var(--dark-primary);
     font-family: monospace;
@@ -39,11 +39,17 @@
     font-weight: 600;
     font-size: 0.8rem;
     color: var(--nav-color);
+    margin-left: 0.3rem;
+}
+
+.card_rating-styles {
+    color: var(--hotpink);
+    margin-left: 1rem;
+    font-size: 0.8rem;
 }
 
 strike {
     text-decoration: line-through;
-    color: var(--black);
 }
 
 .card_btn button {
@@ -70,5 +76,8 @@ strike {
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr));
         grid-template-rows: repeat(1, 1fr);
+    }
+    .product-card_container-images {
+        height: 15rem;
     }
 }
