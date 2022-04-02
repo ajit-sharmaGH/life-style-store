@@ -1,9 +1,7 @@
 import "./productsCard.css";
 import axios from "axios";
 import { useState, useEffect } from "react";
-// import {products} from '../../backend/db/products.jsx'
 const ProductsCard = () => {
-  // const [loader, setLoader] = useState(false);
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
@@ -43,7 +41,7 @@ const ProductsCard = () => {
            
             </div>
             <p className="card_sub-text card_rating-styles">
-             {products.rating}
+              Ratings: {products.rating}
 
               <i className="fa-solid fa-star"> </i>
             </p>

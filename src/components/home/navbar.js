@@ -28,17 +28,19 @@ export function Navbar() {
           <li>
             <Link to="/products"> Products </Link>  
           </li>  
-          <li>
+          <li className="badge_container">
             <Link to="/cart">
               <i className="fa-solid fa-cart-arrow-down"> </i>  
-              <span className="icon-badge"> 4 </span>  
+             
             </Link>  
+            <span className="icon-badge"> 4 </span>  
           </li>  
-          <li>
+          <li className="badge_container">
             <Link to="/wishlist">
               <i className="fa-solid fa-heart"> </i>  
-              <span className="icon-badge"> 2 </span>  
+             
             </Link>  
+            <span className="icon-badge"> 2 </span>  
           </li>  
           <li>
             <Link to="/profile">

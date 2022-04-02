@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
 import React, { useState } from "react";
 import classNames from "classnames";
-import "./productsNav.css";
-export function ProductsNav() {
+import "./cartNav.css";
+export function CartNav() {
   const [isSidebarMenu, setIsSidebarMenu] = useState(false);
   const showSidebar = () => {
     setIsSidebarMenu(!isSidebarMenu);
@@ -57,7 +57,7 @@ export function ProductsNav() {
         <ul className="sidebar-navlink">
           <h1 className="sidebar-logo"> Lifestyle Store </h1>
           <li onClick={showSidebar}>
-            <i className="fa-solid fa-home"> </i>  
+            <i className="fa-solid fa-shirt"> </i>  
             <Link to="/"> Home </Link>  
           </li>  
           <li onClick={showSidebar}>
