@@ -1,12 +1,11 @@
-import {CartComponent} from "../../components/cart/cart.jsx";
+import { CartComponent } from "../../components/cart/cart.jsx";
+import { Navbar } from "../../components/home/navbar.js";
 const Cart = () => {
-    return(
-           <div>
-            
-        <CartComponent />
-          </div>
-        
-        );
-}
-
-export {Cart};
+  return (
+    <div>
+      <Navbar />
+      <CartComponent />
+    </div>
+  );
+};
+export { Cart };

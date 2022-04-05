@@ -38,12 +38,11 @@ export function LandingPage() {
         <div className="flex-center mt-3">
           <h2 className="headings"> Choose Category </h2> 
         </div> 
-     
       <div className="landing-page-secondary flex-center">
         <div className="category_container">
           <h2 className="sub-headings"> Gadgets Collection </h2> 
           <div className="gadgets_container landing-images">
-            <Link to="pages/products.html">
+            <Link to="/products">
                
               <img
                 src="https://i.ibb.co/W2cSP4y/Several-smart-phones-with-large-touch-screens-and-two-digital-tablets-are-placed-in-a-pile-All-brand.jpg"
@@ -56,7 +55,7 @@ export function LandingPage() {
         <div className="category_container">
           <h2 className="sub-headings"> Mens Collection </h2> 
           <div className="mens_container landing-images">
-            <Link to="pages/products.html">
+            <Link to="/products">
               <img
                 src="https://i.ibb.co/tLDzkxW/Mens-suits-in-different-colors-hanging-on-hanger-in-a-retail-clothes-store-close-up.jpg"
                 className="category-images"
@@ -68,7 +67,7 @@ export function LandingPage() {
         <div className="category_container">
           <h2 className="sub-headings"> Kids Collection </h2> 
           <div className="kids_container landing-images">
-            <Link to="pages/products.html">
+            <Link to="/products">
               <img
                 src="https://i.ibb.co/LdG2zYs/Cute-happy-little-girl-embracing-teddy-bear-Pretty-female-kid-at-home-sitting-on-sofa-with-her-favor.jpg"
                 className="category-images"
@@ -80,7 +79,7 @@ export function LandingPage() {
         <div className="category_container">
           <h2 className="sub-headings"> Women Collection </h2> 
           <div className="women_container landing-images">
-            <Link to="pages/products.html">
+            <Link to="/products">
               <img
                 src="https://i.ibb.co/XD8q0Bj/Side-view-of-calm-young-adult-girl-standing-near-wardrobe-choosing-stylish-clothes-compared-trendy-o.jpg"
                 className="category-images"

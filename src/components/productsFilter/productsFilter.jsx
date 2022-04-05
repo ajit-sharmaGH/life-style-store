@@ -1,6 +1,5 @@
 import "./productsFilter.css";
 import { useProductsFilter } from "../../context/filter-context.js";
-
 const ProductsFilter = () => {
   const { state, dispatch } = useProductsFilter();
   return (
@@ -18,15 +17,16 @@ const ProductsFilter = () => {
             Max={10000}
             Step={150}
             defaultValue={state.range}
-            onChange={
-              
-                (event) => dispatch({ type: "RANGE", payload: event.target.value })
+            onChange={(event) =>
+              dispatch({ type: "RANGE", payload: event.target.value })
             }
-        className="range-input" placeholder="Min:250" />
-        <span className="flex-col">
-          <label>min: Rs/- 250 </label><label> 
-           max: Rs/- 10k</label>
-           </span>
+            className="range-input"
+            placeholder="Min:250"
+          />
+          <span className="flex-col">
+            <label>min: Rs/- 250 </label>
+            <label>max: Rs/- 10k</label>
+          </span>
         </p>
       </div>
       <div class="Category-filter filter">
@@ -39,9 +39,8 @@ const ProductsFilter = () => {
             checked={state.category.menWear}
             onChange={() => dispatch({ type: "CATEGORY", payload: "menWear" })}
           />
-          Men-Wear
+          &nbsp;Men-Wear
         </p>
-
         <p>
           <input
             type="checkbox"
@@ -51,7 +50,7 @@ const ProductsFilter = () => {
               dispatch({ type: "CATEGORY", payload: "womenWear" })
             }
           />
-          Women-Wear
+          &nbsp;Women-Wear
         </p>
         <p>
           <input
@@ -60,7 +59,7 @@ const ProductsFilter = () => {
             checked={state.category.gadgets}
             onChange={() => dispatch({ type: "CATEGORY", payload: "gadgets" })}
           />
-          Gadgets
+          &nbsp;Gadgets
         </p>
         <p>
           <input
@@ -69,7 +68,7 @@ const ProductsFilter = () => {
             checked={state.category.kidsWear}
             onChange={() => dispatch({ type: "CATEGORY", payload: "kidsWear" })}
           />
-          Kids-Wear
+          &nbsp;Kids-Wear
         </p>
       </div>
       <div class="ratings-filter filter">
@@ -122,7 +121,7 @@ const ProductsFilter = () => {
                 dispatch({ type: "SORT", payload: "LOW_TO_HIGH" })
               }
             />
-            Price: Low to High
+            &nbsp;Price: Low to High
           </p>
           <p>
             <input
@@ -133,7 +132,7 @@ const ProductsFilter = () => {
                 dispatch({ type: "SORT", payload: "HIGH_TO_LOW" })
               }
             />
-            Price: High to Low
+            &nbsp;Price: High to Low
           </p>
         </div>
       </div>
