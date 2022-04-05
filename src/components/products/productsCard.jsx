@@ -1,13 +1,23 @@
 import "./productsCard.css";
 import axios from "axios";
 import { useState, useEffect } from "react";
+import { useProductsFilter } from "../../context/filter-context.js";
+
+import { getSortedProducts,getFilteredProducts} from '../../reducers/productsFilterReducer.js'
 const ProductsCard = () => {
   const [products, setProducts] = useState([]);
-
+  const { state } = useProductsFilter();
   useEffect(() => {
       fetchProducts()
   }, []);
 
+  const { 
+   category, rating,
+   sortBy,range
+
+  } = state;
+const sortedProducts = getSortedProducts(products , sortBy);
+  const filteredProducts = getFilteredProducts(sortedProducts, category, rating, range);
   const fetchProducts = async () => {
       try {
         
@@ -22,26 +32,26 @@ const ProductsCard = () => {
   return (
   
         <div className="main-container">
-          {products.map((products)=>(
-          <div className="product-card-container" key ={products.id}>
+          {filteredProducts.map((product)=>(
+          <div className="product-card-container" key ={product.id}>
             <img
-              src={products.productImage}
+              src={product.productImage}
               className="product-card_container-images"
               alt=""
             />
-            <h2 className="card_heading">{products.title}</h2> 
+            <h2 className="card_heading">{product.title}</h2> 
             <div className="flex-wrap">
             <p className="card_sub-heading">
-              Rs/{products.originalPrice}
+              Rs/{product.originalPrice}
               </p>
             <p className="card_sub-text">
-            <strike> off-{products.discountPrice}</strike>
+            <strike> off-{product.discountPrice}</strike>
               
             </p>
            
             </div>
             <p className="card_sub-text card_rating-styles">
-              Ratings: {products.rating}
+              rating: {product.rating}
 
               <i className="fa-solid fa-star"> </i>
             </p>

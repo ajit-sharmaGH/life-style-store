@@ -75,9 +75,16 @@ strike {
     .main-container {
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr));
-        grid-template-rows: repeat(1, 1fr);
+        grid-template-rows: repeat(3, 1fr);
     }
     .product-card_container-images {
         height: 15rem;
+    }
+    .product-card-container {
+        margin: 1rem 0.5rem;
+        background-color: var(--white);
+        border-radius: 5px;
+        height: auto;
+        position: relative;
     }
 }
