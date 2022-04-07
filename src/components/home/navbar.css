@@ -125,6 +125,9 @@ this is the link of the  style of  landing page of e-com !
     .logo {
         margin-left: 1rem;
     }
+    .search-bar>input {
+        width: 20rem;
+    }
 }
 
 @media screen and (max-width:992px) and (min-width:600px) {
