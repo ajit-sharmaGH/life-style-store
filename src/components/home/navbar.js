@@ -1,12 +1,16 @@
 import { Link } from "react-router-dom";
 import React, { useState } from "react";
 import classNames from "classnames";
+import { useCart } from "../../context/cart-context.js";
+import { useWishlist } from "../../context/wishlistContext.js";
 import "./navbar.css";
 export function Navbar() {
   const [isSidebarMenu, setIsSidebarMenu] = useState(false);
   const showSidebar = () => {
     setIsSidebarMenu(!isSidebarMenu);
   };
+  const { cartState } = useCart();
+  const { wishlistState } = useWishlist();
 
   return (
     <>
@@ -31,13 +35,16 @@ export function Navbar() {
             <Link to="/cart">
               <i className="fa-solid fa-cart-arrow-down"> </i>
             </Link>
-            <span className="icon-badge"> 4 </span>
+            <span className="icon-badge"> {cartState.cartCounter} </span>
           </li>
           <li className="badge_container">
             <Link to="/wishlist">
               <i className="fa-solid fa-heart"> </i>
             </Link>
-            <span className="icon-badge"> 2 </span>
+            <span className="icon-badge">
+              {" "}
+              {wishlistState.wishlistCounter}{" "}
+            </span>
           </li>
           <li>
             <Link to="/profile">
@@ -54,20 +61,28 @@ export function Navbar() {
         <ul className="sidebar-navlink">
           <h1 className="sidebar-logo"> Lifestyle Store </h1>
           <li onClick={showSidebar}>
-            <i className="fa-solid fa-shirt"> </i>
-            <Link to="/products"> Products </Link>
+            <Link to="/products">
+              {" "}
+              <i className="fa-solid fa-shirt"> </i> Products{" "}
+            </Link>
           </li>
-          <li onClick={showSidebar}>
+          <li onClick={showSidebar} className="badge_container">
+            <label className="sidebar_icon-badge">
+              {cartState.cartCounter}
+            </label>
             <Link to="/cart">
               <i className="fa-solid fa-cart-arrow-down"> </i>
               Cart
             </Link>
           </li>
-          <li onClick={showSidebar}>
+          <li onClick={showSidebar} className="badge_container">
             <Link to="/wishlist">
               <i className="fa-solid fa-heart"> </i>
               Wishlist
             </Link>
+            <label className="sidebar_icon-badge">
+              {wishlistState.wishlistCounter}
+            </label>
           </li>
           <li onClick={showSidebar}>
             <Link to="/profile">
