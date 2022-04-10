@@ -1,12 +1,17 @@
 import "./productsCard.css";
 import axios from "axios";
+import { Navbar } from "../home/navbar.js";
 import { useState, useEffect } from "react";
 import { useProductsFilter } from "../../context/filter-context.js";
+import { useCart } from "../../context/cart-context.js";
+import { useWishlist } from "../../context/wishlistContext.js";
 import {
   getSortedProducts,
   getFilteredProducts,
 } from "../../reducers/productsFilterReducer.js";
 const ProductsCard = () => {
+  const { cartItemsDispatch } = useCart();
+  const { wishlistItemsDispatch } = useWishlist();
   const [products, setProducts] = useState([]);
   const { state } = useProductsFilter();
   useEffect(() => {
@@ -31,35 +36,55 @@ const ProductsCard = () => {
   };
 
   return (
-    <div className="main-container">
-      {filteredProducts.map((product) => (
-        <div className="product-card-container" key={product.id}>
-          <img
-            src={product.productImage}
-            className="product-card_container-images"
-            alt=""
-          />
-          <h2 className="card_heading">{product.title}</h2>
-          <div className="flex-wrap">
-            <p className="card_sub-heading">Rs/{product.originalPrice}</p>
-            <p className="card_sub-text">
-              <strike> off-{product.discountPrice}</strike>
-            </p>
-          </div>
-          <p className="card_sub-text card_rating-styles">
-            rating: {product.rating}
-            <i className="fa-solid fa-star"> </i>
-          </p>
-          <div className="card_btn">
-            <button className="btn-primary">Add to Cart</button>
-            <button className="btn-outline">
-              {" "}
-              <i className="fa-solid fa-heart"> </i>&nbsp;Wishlist
-            </button>
-          </div>
-        </div>
-      ))}
-    </div>
+    <>
+      <Navbar />
+      <div className="main-container">
+        {filteredProducts.map(
+          ({
+            title,
+            productImage,
+            originalPrice,
+            discountPrice,
+            rating,
+            _id,
+          }) => (
+            <div className="product-card-container" key={_id}>
+              <img
+                src={productImage}
+                className="product-card_container-images"
+                alt=""
+              />
+              <h2 className="card_heading">{title}</h2>
+              <div className="flex-wrap">
+                <p className="card_sub-heading">Rs/{originalPrice}</p>
+                <p className="card_sub-text">
+                  <strike> off-{discountPrice}</strike>
+                </p>
+              </div>
+              <p className="card_sub-text card_rating-styles">
+                rating: {rating}
+                <i className="fa-solid fa-star"> </i>
+              </p>
+              <div className="card_btn">
+                <button
+                  className="btn-primary"
+                  onClick={() => cartItemsDispatch({ type: "ADD_TO_CART" })}
+                >
+                  Add to Cart
+                </button>
+                <button
+                  className="btn-outline"
+                  onClick={() => wishlistItemsDispatch({ type: "ADD_TO_WISHLIST" })}
+                >
+                  {" "}
+                  <i className="fa-solid fa-heart"> </i>&nbsp;Wishlist
+                </button>
+              </div>
+            </div>
+          )
+        )}
+      </div>
+    </>
   );
 };
 export { ProductsCard };
