@@ -1,67 +1,138 @@
 import "./cart.css";
+import { useCart } from "../../context/cart-context.js";
 const CartComponent = () => {
+  const { cartState, cartItemsDispatch } = useCart();
+  const totalCalculatedCost = () => {
+    return cartState.cartData.reduce((sum, currentPrice) => {
+      return (sum = sum + currentPrice.totalPrice);
+    }, 0);
+  };
+  const discountCalculatedCost = () => {
+    return cartState.cartData.reduce((sum, currentValue) => {
+      return (sum = sum + currentValue.discountPrice * currentValue.quantity);
+    }, 0);
+  };
+  const removeFromCart = (item) => {
+    cartItemsDispatch({
+      type: "REMOVE_FROM_CART",
+      payload: { value: item },
+    });
+  };
+  const decreaseQuantity = (item) => {
+    const product = cartState.cartData.find((data) => data._id === item);
+    if (product.quantity > 1) {
+      cartItemsDispatch({
+        type: "DECREASE_QUANTITY",
+        payload: { value: item },
+      });
+    }
+  };
+  const increaseQuantity = (item) => {
+    cartItemsDispatch({
+      type: "INCREASE_QUANTITY",
+      payload: { value: item },
+    });
+  };
+
   return (
-    <>
-      <div className="flex-wrap-center cart-body-container">
-        <div className="cart-product-container">
-          <img
-            src="https://i.ibb.co/C82sGMs/Earphones-with-neck-guitar-in-the-studio.jpg "
-            className="product-card_container-images"
-            alt=""
-          />
+    <div className="flex-center  cart-body-container">
+      <div className="flex-wrap">
+        <div className="flex-col-center">
+          <h3 className="cart-heading mt-3">
+            Cart Items: {cartState.cartCounter}
+          </h3>
+          {cartState.cartData.map(
+            ({
+              _id,
+              title,
+              productImage,
+              discountPrice,
+              originalPrice,
+              rating,
+              quantity,
+            }) => {
+              return (
+                <div key={_id} className="cart-product-container flex">
+                  <div className="cart_images">
+                    <img src={productImage} alt="" />
+                  </div>
+                  <div className="cart_products-detail flex-col">
+                    <h5 className="sub-headings">{title}</h5>
 
-          <h2 className="card_heading">Try&nbsp;Headphones</h2>
+                    <span className="cart_original-pricing">
+                      Rs/ {originalPrice}{" "}
+                    </span>
+                    <strike className="cart_discount-pricing">
+                      {" "}
+                      off-{discountPrice}
+                    </strike>
+                    <span className="flex">
+                      <button onClick={() => decreaseQuantity(_id)}>-</button>
+                      <label className="quantity-showing">{quantity}</label>
+                      <button onClick={() => increaseQuantity(_id)}>+</button>
+                    </span>
+                    <span className="cart_rating">
+                      Rating: {rating} <i className="fa-solid fa-star"> </i>{" "}
+                    </span>
 
-          <p className="product-add-sub-btn">
-            <button className="quantityIncrease">add</button>
-            <label className="quantityOutput">1</label>
-            <button className="quantityDecrease">sub</button>
-          </p>
-          <p className="card_sub-heading">Rs/-&nbsp;500</p>
-          <p className="card_sub-text">
-            off-&nbsp;20%
-            <strike>Rs/-600</strike>
-          </p>
-
-          <div className="card_btn">
-            <button className="btn-primary">Move to Wishlist</button>
-            <button className="btn-outline">Remove from Cart </button>
-          </div>
+                    <button
+                      className="btn-dark cart_button"
+                      onClick={() => removeFromCart(_id)}
+                    >
+                      Remove From Cart
+                    </button>
+                    <button className="btn-outline cart_button">
+                      Move to Wishlist
+                    </button>
+                  </div>
+                </div>
+              );
+            }
+          )}
         </div>
+        {cartState.cartCounter > 0 ? (
+          <div>
+            <h3 className="cart-heading mt-3 flex-col-center">Price Card</h3>
+            <div className="order_details-container flex-col">
+              <p className="sub-headings">Price Details</p>
+              <hr className="hr-tag" />
+              <div className="flex-row price">
+                <li className="price-tag">Price</li>
+                <li>Rs:&nbsp;{`${totalCalculatedCost()}`}</li>
+              </div>
+              <div className="flex-row discount">
+                <li className="price-tag">discount</li>
+                <li>Rs:{`${discountCalculatedCost()}`}</li>
+              </div>
+              <div className="flex-row delivery-charge">
+                <li className="price-tag">delivery Charge</li>
+                <li>Rs: 100</li>
+              </div>
+              <hr className="hr-tag" />
+              <div className="flex-row total-amount">
+                <li className="price-tag">total amount</li>
+                <li>
+                  Rs:
+                  {`${totalCalculatedCost() - discountCalculatedCost() + 100}`}
+                </li>
+              </div>
+              <hr className="hr-tag" />
+              <div className="flex-row delivery-charge">
+                <li className="price-tag">
+                  You Will Save: Rs:&nbsp;{`${discountCalculatedCost()}`}{" "}
+                  &nbsp;on this order
+                </li>
+              </div>
 
-        <div className="price-card-container">
-          <table className="pricing-table">
-            <tr>
-              <th>Content</th>
-              <th>Price</th>
-            </tr>
-            <tr>
-              <td>Items</td>
-              <td>6</td>
-            </tr>
-            <tr>
-              <td>Total Mrp</td>
-              <td>Rs/&nbsp;8000</td>
-            </tr>
-            <tr>
-              <td>Discount</td>
-              <td>100%</td>
-            </tr>
-            <tr>
-              <td>Delivery Charges</td>
-              <td>Rs/&nbsp;00</td>
-            </tr>
-            <tr>
-              <td>Total</td>
-              <td>Rs/&nbsp;00</td>
-            </tr>
-          </table>
-          <div className="card_btn">
-            <button className="btn-outline">Place Order</button>
+              <button className="btn-outline order-btn">Place Order</button>
+            </div>
           </div>
-        </div>
+        ) : (
+          <p></p>
+        )}
+        ;
       </div>
-    </>
+    </div>
   );
 };
 export { CartComponent };

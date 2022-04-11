@@ -10,7 +10,7 @@ import {
   getFilteredProducts,
 } from "../../reducers/productsFilterReducer.js";
 const ProductsCard = () => {
-  const { cartItemsDispatch } = useCart();
+  const { cartState, cartItemsDispatch } = useCart();
   const { wishlistItemsDispatch } = useWishlist();
   const [products, setProducts] = useState([]);
   const { state } = useProductsFilter();
@@ -34,7 +34,30 @@ const ProductsCard = () => {
       console.error(error);
     }
   };
-
+  const addToCart = (
+    _id,
+    title,
+    productImage,
+    discountPrice,
+    originalPrice,
+    rating
+  ) => {
+    cartItemsDispatch({
+      type: "ADD_TO_CART",
+      payload: {
+        value: {
+          _id,
+          title,
+          productImage,
+          discountPrice,
+          originalPrice,
+          quantity: 1,
+          totalPrice: originalPrice,
+          rating,
+        },
+      },
+    });
+  };
   return (
     <>
       <Navbar />
@@ -46,6 +69,7 @@ const ProductsCard = () => {
             originalPrice,
             discountPrice,
             rating,
+
             _id,
           }) => (
             <div className="product-card-container" key={_id}>
@@ -66,15 +90,31 @@ const ProductsCard = () => {
                 <i className="fa-solid fa-star"> </i>
               </p>
               <div className="card_btn">
-                <button
-                  className="btn-primary"
-                  onClick={() => cartItemsDispatch({ type: "ADD_TO_CART" })}
-                >
-                  Add to Cart
-                </button>
+                {cartState.cartData.some((item) => item._id === _id) ? (
+                  <button className="btn-green">In Cart</button>
+                ) : (
+                  <button
+                    className="btn-primary"
+                    onClick={() =>
+                      addToCart(
+                        _id,
+                        title,
+
+                        productImage,
+                        discountPrice,
+                        originalPrice,
+                        rating
+                      )
+                    }
+                  >
+                    Add To Cart
+                  </button>
+                )}
                 <button
                   className="btn-outline"
-                  onClick={() => wishlistItemsDispatch({ type: "ADD_TO_WISHLIST" })}
+                  onClick={() =>
+                    wishlistItemsDispatch({ type: "ADD_TO_WISHLIST" })
+                  }
                 >
                   {" "}
                   <i className="fa-solid fa-heart"> </i>&nbsp;Wishlist
