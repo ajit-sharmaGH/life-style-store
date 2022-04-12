@@ -130,7 +130,7 @@ const CartComponent = () => {
         ) : (
           <p></p>
         )}
-        ;
+        
       </div>
     </div>
   );

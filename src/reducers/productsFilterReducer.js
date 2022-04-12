@@ -8,7 +8,7 @@ const initialState = {
   },
   search: "",
   rating: "",
-  range: 1000,
+  range: 10000,
 };const filterReducer = (state, action) => {
   switch (action.type) {
     case "SORT":
