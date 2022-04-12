@@ -7,7 +7,7 @@ const initialState = {
     gadgets: true,
   },
   search: "",
-  rating: 1,
+  rating: "",
   range: 1000,
 };const filterReducer = (state, action) => {
   switch (action.type) {
@@ -39,8 +39,8 @@ const initialState = {
           gadgets: true,
         },
         search: "",
-        rating: 1,
-        range: 1000,
+        rating: "",
+        range: 10000,
       };
     default:
       return state;
@@ -64,7 +64,7 @@ const getFilteredProducts = (
 ) => {
   return products
     .filter((product) => category[product.categoryName])
-    .filter((product) => (ratings === 1 ? true : ratings <= product.rating))
+    .filter((product) => (ratings === "" ? true : ratings <= product.rating.length))
     .filter((product) => product.originalPrice <= range);
 };
 

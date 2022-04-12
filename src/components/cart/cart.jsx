@@ -72,7 +72,7 @@ const CartComponent = () => {
                       <button onClick={() => increaseQuantity(_id)}>+</button>
                     </span>
                     <span className="cart_rating">
-                      Rating: {rating} <i className="fa-solid fa-star"> </i>{" "}
+                      {rating}
                     </span>
 
                     <button

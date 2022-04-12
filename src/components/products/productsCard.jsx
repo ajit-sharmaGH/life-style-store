@@ -34,30 +34,7 @@ const ProductsCard = () => {
       console.error(error);
     }
   };
-  const addToCart = (
-    _id,
-    title,
-    productImage,
-    discountPrice,
-    originalPrice,
-    rating
-  ) => {
-    cartItemsDispatch({
-      type: "ADD_TO_CART",
-      payload: {
-        value: {
-          _id,
-          title,
-          productImage,
-          discountPrice,
-          originalPrice,
-          quantity: 1,
-          totalPrice: originalPrice,
-          rating,
-        },
-      },
-    });
-  };
+  
   return (
     <>
       <Navbar />
@@ -69,7 +46,7 @@ const ProductsCard = () => {
             originalPrice,
             discountPrice,
             rating,
-
+            ratingLogo,
             _id,
           }) => (
             <div className="product-card-container" key={_id}>
@@ -80,45 +57,55 @@ const ProductsCard = () => {
               />
               <h2 className="card_heading">{title}</h2>
               <div className="flex-wrap">
-                <p className="card_sub-heading">Rs/{originalPrice}</p>
+                <p className="card_sub-heading">Rs:&nbsp;{originalPrice}</p>
                 <p className="card_sub-text">
-                  <strike> off-{discountPrice}</strike>
+                  <strike> off/Rs:&nbsp;{discountPrice}</strike>
                 </p>
               </div>
               <p className="card_sub-text card_rating-styles">
-                rating: {rating}
-                <i className="fa-solid fa-star"> </i>
+                 {rating}
+                
+              </p>
+              <p className="card_rating-logo">
+                 {ratingLogo}&nbsp;⭐
+                
               </p>
               <div className="card_btn">
                 {cartState.cartData.some((item) => item._id === _id) ? (
-                  <button className="btn-green">In Cart</button>
+                  <button className="btn-dark">In Cart</button>
                 ) : (
                   <button
                     className="btn-primary"
                     onClick={() =>
-                      addToCart(
-                        _id,
-                        title,
-
-                        productImage,
-                        discountPrice,
-                        originalPrice,
-                        rating
-                      )
+                      cartItemsDispatch({
+                        type: "ADD_TO_CART",
+                        payload: {
+                          value: {
+                            _id,
+                            title,
+                            productImage,
+                            discountPrice,
+                            originalPrice,
+                            quantity: 1,
+                            totalPrice: originalPrice,
+                            rating,
+                          },
+                        },
+                      })
+      
                     }
                   >
                     Add To Cart
                   </button>
                 )}
-                <button
-                  className="btn-outline"
-                  onClick={() =>
+               
+                  {" "}
+                  <i className="fa-solid fa-heart card_wishlist-icon"  onClick={() =>
                     wishlistItemsDispatch({ type: "ADD_TO_WISHLIST" })
                   }
-                >
-                  {" "}
-                  <i className="fa-solid fa-heart"> </i>&nbsp;Wishlist
-                </button>
+                  >
+                     </i>
+               
               </div>
             </div>
           )
