@@ -1,4 +1,5 @@
 import "./cart.css";
+import {Link} from "react-router-dom";
 import { useCart } from "../../context/cart-context.js";
 const CartComponent = () => {
   const { cartState, cartItemsDispatch } = useCart();
@@ -81,9 +82,11 @@ const CartComponent = () => {
                     >
                       Remove From Cart
                     </button>
+                    <Link to ="/wishlist">
                     <button className="btn-outline cart_button">
                       Move to Wishlist
                     </button>
+                    </Link>
                   </div>
                 </div>
               );

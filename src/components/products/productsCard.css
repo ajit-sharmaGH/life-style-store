@@ -83,11 +83,6 @@ strike {
     cursor: pointer;
 }
 
-.card_wishlist-icon:hover {
-    color: var(--hotpink);
-    background-color: var(--white);
-}
-
 .card_wishlist-added {
     background-color: var(--hotpink);
 }
@@ -98,7 +93,7 @@ strike {
 
 .card_btn button:hover {
     color: var(--primary);
-    background-color: white;
+    background-color: var(--white);
 }
 
 @media screen and (max-width:768px) {

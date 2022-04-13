@@ -11,7 +11,7 @@ import {
 } from "../../reducers/productsFilterReducer.js";
 const ProductsCard = () => {
   const { cartState, cartItemsDispatch } = useCart();
-  const { wishlistItemsDispatch } = useWishlist();
+  const { wishlistState, wishlistItemsDispatch } = useWishlist();
   const [products, setProducts] = useState([]);
   const { state } = useProductsFilter();
   useEffect(() => {
@@ -34,7 +34,7 @@ const ProductsCard = () => {
       console.error(error);
     }
   };
-  
+
   return (
     <>
       <Navbar />
@@ -62,14 +62,8 @@ const ProductsCard = () => {
                   <strike> off/Rs:&nbsp;{discountPrice}</strike>
                 </p>
               </div>
-              <p className="card_sub-text card_rating-styles">
-                 {rating}
-                
-              </p>
-              <p className="card_rating-logo">
-                 {ratingLogo}&nbsp;⭐
-                
-              </p>
+              <p className="card_sub-text card_rating-styles">{rating}</p>
+              <p className="card_rating-logo">{ratingLogo}&nbsp;⭐</p>
               <div className="card_btn">
                 {cartState.cartData.some((item) => item._id === _id) ? (
                   <button className="btn-dark">In Cart</button>
@@ -92,20 +86,48 @@ const ProductsCard = () => {
                           },
                         },
                       })
-      
                     }
                   >
                     Add To Cart
                   </button>
                 )}
-               
-                  {" "}
-                  <i className="fa-solid fa-heart card_wishlist-icon"  onClick={() =>
-                    wishlistItemsDispatch({ type: "ADD_TO_WISHLIST" })
-                  }
-                  >
-                     </i>
-               
+
+                <div>
+                  {wishlistState.wishlistData.some(
+                    (item) => item._id === _id
+                  ) ? (
+                    <i className="fa-solid fa-heart card_wishlist-icon card_wishlist-added"
+                    onClick={() =>  wishlistItemsDispatch({
+                      type: "REMOVE_FROM_WISHLIST",
+                      payload: {
+                        value: _id,
+                      },
+                    })}></i>
+                  ) : (
+                    <i
+                      className="fa-solid fa-heart card_wishlist-icon"
+                      onClick={() =>
+                        wishlistItemsDispatch({
+                          type: "ADD_TO_WISHLIST",
+                          payload: {
+                            value: {
+                              _id,
+                              title,
+                              productImage,
+                              discountPrice,
+                              originalPrice,
+                              ratingLogo,
+
+                              totalPrice: originalPrice,
+                              rating,
+                            },
+                          },
+                        })
+                      }
+                    ></i>
+                  )}
+                  
+                </div>
               </div>
             </div>
           )

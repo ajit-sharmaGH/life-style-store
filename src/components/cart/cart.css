@@ -24,6 +24,7 @@
 .cart_images {
     margin: 5px;
     width: 15rem;
+    max-height: 15rem;
 }
 
 .cart_products-detail {
