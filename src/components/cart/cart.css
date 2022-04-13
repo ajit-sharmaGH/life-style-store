@@ -1,50 +1,93 @@
 .cart-body-container {
-    min-height: 100vh;
     background-color: var(--dark-primary-text);
-    padding: 1rem;
+    padding-top: 1rem;
+    min-height: 100vh;
+}
+
+.cart-heading {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--dark-tertiary);
 }
 
 .cart-product-container {
-    margin: 4rem 1rem;
+    border-radius: 0.5rem;
+    margin: 1rem 0.3rem;
+    min-width: 18rem;
     background-color: var(--secondary-bg-color);
 }
 
-.price-card-container {
-    border: 2px solid var(--dark-secondary);
-    width: 23rem;
+.cart_button {
+    margin: 0.5rem 0;
+}
+
+.cart_images {
+    margin: 5px;
+    width: 15rem;
+}
+
+.cart_products-detail {
+    margin: 0 0.5rem;
+}
+
+.cart_original-pricing {
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.cart_discount-pricing {
+    font-weight: 400;
+    color: var(--dark);
+}
+
+.cart_rating {
+    font-weight: 600;
+    color: var(--hotpink);
+}
+
+.order_details-container {
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    overflow: none;
+    min-width: 20rem;
+    margin: 1rem 0.3rem 1rem 1rem;
+    border: 2px solid var(--blueviolet);
     background-color: var(--secondary-bg-color);
 }
 
-.product-add-sub-btn {
-    margin-left: 1rem;
-    display: inline-block;
+.price-tag {
+    margin-right: auto;
 }
 
-.product-add-sub-btn>button {
-    padding: 0px 10px;
-    color: var(--secondary-bg-color);
-    font-size: 1rem;
+.hr-tag {
+    margin-top: 5px;
+    padding: 0.5px;
+    background-color: var(--primary);
+}
+
+.order-btn {
+    margin: 1rem 0;
+}
+
+.price,
+.discount,
+.delivery-charge,
+.total-amount {
+    margin-top: 0.5rem;
     font-weight: 600;
-    background-color: var(--secondary);
 }
 
-.price-details-heading {
-    border-bottom: 5px solid var(--dark-primary-text);
-    margin: 1rem 0rem;
-    font-size: 1.2rem;
-    font-weight: 600;
-    color: var(--tertiary);
-}
-
-.pricing-table {
-    width: 100%;
-}
-
-.pricing-table>tr,
-td {
-    border: 2px solid var(--dark-secondary);
-    padding: 1rem;
+.total-amount {
     font-weight: 800;
-    font-family: montserrat;
-    color: var(--dark-tertiary);
+}
+
+.quantity-showing {
+    margin: 0rem 0.5rem;
+}
+
+@media screen and (max-width:768px) {
+    .cart_images {
+        margin: 5px;
+        width: 10rem;
+    }
 }

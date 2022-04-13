@@ -1,19 +1,19 @@
 .main-container {
+    min-height: calc(100vh - 3rem);
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
-    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fill, minmax(13rem, 1fr));
+    grid-template-rows: repeat(6, 1fr);
 }
 
 .product-card-container {
     margin: 1rem 0.5rem;
     background-color: var(--white);
     border-radius: 5px;
-    height: auto;
     position: relative;
 }
 
 .product-card_container-images {
-    height: 18rem;
+    height: 15rem;
     width: 100%;
     background-size: cover;
     border: 1px solid var(--white);
@@ -21,31 +21,23 @@
 }
 
 .card_heading {
-    color: var(--primary);
-    font-size: 1.1rem;
-    font-weight: 600;
     margin-left: 1rem;
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: var(--dark-tertiary);
 }
 
 .card_sub-heading {
-    color: var(--dark-primary);
-    font-family: monospace;
-    font-weight: 800;
-    font-size: 1rem;
     margin-left: 1rem;
+    font-weight: 600;
+    font-size: 1.1rem;
 }
 
 .card_sub-text {
-    font-weight: 600;
     font-size: 0.8rem;
-    color: var(--nav-color);
     margin-left: 0.3rem;
-}
-
-.card_rating-styles {
-    color: var(--hotpink);
-    margin-left: 1rem;
-    font-size: 0.8rem;
+    font-weight: 400;
+    color: var(--dark);
 }
 
 strike {
@@ -53,13 +45,51 @@ strike {
 }
 
 .card_btn button {
-    width: 6rem;
+    min-width: 6.5rem;
     margin: 0.5rem 0rem 0.5rem 0.6rem;
     color: var(--white);
-    border: 2px solid var(--red);
+    border: 1px solid var(--dark);
     font-weight: 600;
     font-size: 1rem;
-    padding: 5px 0px;
+    padding: 5px;
+}
+
+.card_rating-logo,
+.card_rating-styles {
+    margin-left: 1rem;
+}
+
+.card_rating-logo {
+    position: absolute;
+    font-weight: 600;
+    top: 13.5rem;
+    background-color: var(--dark);
+    color: var(--white);
+    border-radius: 5px;
+    padding: 0 0 0 2px;
+    font-size: 0.7rem;
+    border: 0.1px solid var(--secondary-bg-color);
+}
+
+.card_wishlist-icon {
+    color: var(--white);
+    padding: 4px;
+    background-color: var(--dark);
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 1.2rem;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.card_wishlist-icon:hover {
+    color: var(--hotpink);
+    background-color: var(--white);
+}
+
+.card_wishlist-added {
+    background-color: var(--hotpink);
 }
 
 .card_btn>.btn-outline {
@@ -75,10 +105,10 @@ strike {
     .main-container {
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr));
-        grid-template-rows: repeat(3, 1fr);
+        grid-template-rows: repeat(6, 1fr);
     }
     .product-card_container-images {
-        height: 15rem;
+        height: 12rem;
     }
     .product-card-container {
         margin: 1rem 0.5rem;
@@ -86,5 +116,8 @@ strike {
         border-radius: 5px;
         height: auto;
         position: relative;
+    }
+    .card_rating-logo {
+        top: 10.5rem;
     }
 }
