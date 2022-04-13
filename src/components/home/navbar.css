@@ -8,11 +8,62 @@ this is the link of the  style of  landing page of e-com !
 */
 
 @import url("https://ecom-lifestyle-store.netlify.app/style.css");
-.search-bar i {
-    background-color: var(--white);
-    padding: 0.4rem;
-    border-radius: 50%;
-    margin-left: 0.5rem;
+.lifestyleStore_header-part-2,
+.lifestyleStore_header-part {
+    position: fixed;
+    justify-content: space-between;
+    background-color: var(--nav-color);
+    color: var(--white);
+    z-index: 1;
+    width: 100vw;
+    padding: 1rem 0;
+    align-items: center;
+    border: 1px solid var(--dark-primary);
+}
+
+.lifestyleStore_logo-2>h1,
+.lifestyleStore_logo>h1 {
+    font-weight: 800;
+    margin-left: 1rem;
+    font-size: 1.3rem;
+    border-top: 3px solid var(--red);
+    border-left: 5px solid var(--yellow);
+}
+
+.lifestyleStore_search-bar-2,
+.lifestyleStore_search-bar {
+    border-radius: 5px;
+    padding: 2px 5px;
+    margin: 0 0.5rem;
+    /* background-color: var(--dark-primary-text); */
+    border-bottom: 1px solid var(--dark-primary-text);
+}
+
+.products_search-bar-2,
+.products_search-bar {
+    border: none;
+    outline: none;
+    min-width: 20rem;
+    border-radius: 5px;
+    padding: 5px 1px;
+    font-size: 1.1rem;
+    font-family: monster;
+    margin-right: 0.2rem;
+}
+
+.lifestyleStore_navlink {
+    display: flex;
+    margin-right: 1rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.lifestyleStore_navlink>li:hover {
+    color: var(--primary);
+}
+
+.lifestyleStore_navlink>li {
+    margin: 0 1rem;
 }
 
 .search-bar i:hover {
@@ -32,7 +83,7 @@ this is the link of the  style of  landing page of e-com !
     position: absolute;
     background-color: var(--danger-bg-color);
     top: -0.8rem;
-    right: 1rem;
+    left: 0.8rem;
     height: 1.5rem;
     width: 1.5rem;
     border-radius: 50%;
@@ -45,6 +96,7 @@ this is the link of the  style of  landing page of e-com !
     top: -0.7rem;
 }
 
+.hamburger-2,
 .hamburger {
     display: none;
     color: var(--white);
@@ -112,44 +164,45 @@ this is the link of the  style of  landing page of e-com !
     font-size: 1.2rem;
 }
 
-@media screen and (max-width:992px) {
-    .navlink {
-        display: none;
+.lifestyleStore_header-part-2 {
+    display: none;
+}
+
+@media screen and (max-width:992px) and (min-width:768px) {
+    .lifestyleStore_navlink>li {
+        margin: 0 10px;
     }
-    .header-part {
-        width: 100vw;
+    .products_search-bar {
+        min-width: 18rem;
     }
-    .hamburger {
+}
+
+@media screen and (max-width:768px) {
+    .hamburger-2 {
         display: block;
-    }
-    .logo {
         margin-left: 1rem;
     }
-    .search-bar>input {
-        width: 20rem;
-    }
-}
-
-@media screen and (max-width:992px) and (min-width:600px) {
-    .search-bar>input {
-        min-width: 20rem;
-        margin-right: 0;
-    }
-}
-
-@media screen and (min-width:992px) {
-    .side-nav-menu {
-        visibility: hidden;
-        transition: 0.5s ease-in-out;
-    }
-}
-
-@media screen and (max-width:600px) {
-    .logo {
+    .lifestyleStore_header-part {
         display: none;
     }
-    .search-bar>input {
-        max-width: 15rem;
-        margin-left: 1rem;
+    .lifestyleStore_header-part-2 {
+        display: block;
+        background-color: var(--nav-color);
+    }
+    .lifestyleStore_logo-2 {
+        margin-right: auto;
+    }
+    .logo-and-links {
+        margin: 1px auto;
+    }
+    .lifestyleStore_search-bar-2 {
+        margin-right: auto;
+        background-color: none;
+    }
+    .products_search-bar-2 {
+        min-width: 8rem;
+    }
+    .burger-and-search {
+        margin: 3px 0 1px 5px;
     }
 }

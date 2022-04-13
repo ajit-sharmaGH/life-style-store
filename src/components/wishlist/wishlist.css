@@ -5,7 +5,7 @@
 }
 
 .heading_wishlist-counter {
-    margin-top: 4rem;
+    margin-top: 4.5rem;
     font-size: 1.3rem;
     color: var(--dark-tertiary);
     font-weight: 800;
@@ -13,4 +13,10 @@
 
 .wishlist_card {
     width: 13rem;
+}
+
+@media screen and (max-width:768px) {
+    .heading_wishlist-counter {
+        margin-top: 8rem;
+    }
 }

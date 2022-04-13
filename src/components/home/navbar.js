@@ -13,13 +13,17 @@ export function Navbar() {
   const { wishlistState } = useWishlist();
 
   return (
-    <>
-      <header className="header-part">
-        <Link className="logo" to="/">
+    <div>
+      <header className="lifestyleStore_header-part flex-wrap">
+        <Link className="lifestyleStore_logo" to="/">
           <h1> Lifestyle Store </h1>
         </Link>
-        <div className="search-bar">
-          <input type="text" placeholder="search Products" />
+        <div className="lifestyleStore_search-bar">
+          <input
+            type="text"
+            placeholder="search Products"
+            className="products_search-bar"
+          />
           <Link to="#">
             <i className="fa-solid fa-magnifying-glass"> </i>
           </Link>
@@ -27,7 +31,7 @@ export function Navbar() {
         <li className="hamburger" onClick={showSidebar}>
           <i class="fa-solid fa-bars"> </i>
         </li>
-        <ul className="navlink">
+        <ul className="lifestyleStore_navlink">
           <li>
             <Link to="/products"> Products </Link>
           </li>
@@ -53,13 +57,55 @@ export function Navbar() {
           </li>
         </ul>
       </header>
+      <header className="lifestyleStore_header-part-2 flex-wrap">
+        <div className="logo-and-links flex-wrap">
+          <Link className="lifestyleStore_logo-2" to="/">
+            <h1> Lifestyle Store </h1>
+          </Link>
+
+          <ul className="lifestyleStore_navlink flex">
+            <li className="badge_container">
+              <Link to="/cart">
+                <i className="fa-solid fa-cart-arrow-down"> </i>
+              </Link>
+              <span className="icon-badge"> {cartState.cartCounter} </span>
+            </li>
+            <li className="badge_container">
+              <Link to="/wishlist">
+                <i className="fa-solid fa-heart"> </i>
+              </Link>
+              <span className="icon-badge">
+                {" "}
+                {wishlistState.wishlistCounter}{" "}
+              </span>
+            </li>
+          </ul>
+        </div>
+        <div className="burger-and-search flex-wrap">
+          <div className="lifestyleStore_search-bar-2">
+            <input
+              type="text"
+              placeholder="search Products"
+              className="products_search-bar-2"
+            />
+            <Link to="#">
+              <i className="fa-solid fa-magnifying-glass"> </i>
+            </Link>
+          </div>
+          <li className="hamburger-2" onClick={showSidebar}>
+            <i class="fa-solid fa-bars"> </i>
+          </li>
+        </div>
+      </header>
       <div
         className={classNames("side-nav-menu", {
           "side-nav-menu-active": isSidebarMenu,
         })}
       >
         <ul className="sidebar-navlink">
-          <h1 className="sidebar-logo"> Lifestyle Store </h1>
+          <Link to="/">
+            <h1 className="sidebar-logo"> Lifestyle Store </h1>
+          </Link>
           <li onClick={showSidebar}>
             <Link to="/products">
               {" "}
@@ -92,6 +138,6 @@ export function Navbar() {
           </li>
         </ul>
       </div>
-    </>
+    </div>
   );
 }

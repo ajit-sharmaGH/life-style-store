@@ -1,6 +1,6 @@
 .cart-body-container {
     background-color: var(--dark-primary-text);
-    padding-top: 1rem;
+    padding-top: 1.5rem;
     min-height: 100vh;
 }
 
@@ -90,5 +90,8 @@
     .cart_images {
         margin: 5px;
         width: 10rem;
+    }
+    .cart-body-container {
+        padding-top: 4.5rem;
     }
 }
