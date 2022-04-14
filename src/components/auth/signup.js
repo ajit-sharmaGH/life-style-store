@@ -4,6 +4,7 @@ const SignupForm = () => {
   return (
     <div className="flex-center form_body">
       <form className="login-form form-container">
+      <h1 className="sub-headings">SIGNUP FORM</h1>
         <div className="flex-col login-form-div">
           <aside className="flex-wrap">
             <span className="flex-col">
@@ -59,7 +60,7 @@ const SignupForm = () => {
             <button className="forget-pwd-btn">forget password</button>
           </div>
           <button type="submit" className="btn-outline form-btn">
-            Login
+          Signup
           </button>
 
           <aside className="flex-wrap">

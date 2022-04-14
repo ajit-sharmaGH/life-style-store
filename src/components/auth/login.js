@@ -3,7 +3,9 @@ import { Link } from "react-router-dom";
 const LoginForm = () => {
   return (
     <div className="flex-center form_body">
+       
       <form className="login-form form-container">
+      <h1 className="sub-headings">LOGIN FORM</h1>
         <div className="flex-col login-form-div">
           <label>E-mail</label>
           <input
@@ -33,7 +35,6 @@ const LoginForm = () => {
           </button>
 
           <aside className="flex-wrap">
-        <span>Don't have an account &nbsp;</span>
             <Link to="/signup" className="link-tag">
               Create New Account&nbsp;{`>>`}
             </Link>

@@ -1,19 +1,17 @@
 .form-container {
     width: 30rem;
     border-radius: 5px;
-    border: 1px solid var(--dark);
     padding: 1rem;
     font-family: monster;
     font-size: 1.2rem;
+    margin: 10rem 0 1rem 0;
     font-weight: 400;
     color: var(--dark-tertiary);
-    background-color: var(--primary-bg-color);
+    box-shadow: 1px 1px 2px 2px var(--dark-primary-text);
 }
 
 .form_body {
     overflow: auto;
-    min-height: 110vh;
-    background-color: var(--dark-primary-text);
 }
 
 .link-tag {
