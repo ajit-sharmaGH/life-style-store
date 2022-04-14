@@ -1,0 +1,59 @@
+.form-container {
+    width: 30rem;
+    border-radius: 5px;
+    border: 1px solid var(--dark);
+    padding: 1rem;
+    font-family: monster;
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: var(--dark-tertiary);
+    background-color: var(--primary-bg-color);
+}
+
+.form_body {
+    overflow: auto;
+    min-height: 110vh;
+    background-color: var(--dark-primary-text);
+}
+
+.link-tag {
+    border-bottom: 1px solid var(--dark);
+}
+
+.form_checkbox-input-container {
+    margin-right: auto;
+}
+
+.login_password-input,
+.login-input {
+    padding: 5px 0px;
+    font-family: monster;
+    font-size: 1.1rem;
+    outline: none;
+    border: none;
+    margin: 5px 2px;
+    border-bottom: 2px solid var(--dark);
+}
+
+.checkbox-input {
+    margin-right: 5px;
+}
+
+.form-btn {
+    margin: 10px 0;
+}
+
+.forget-pwd-btn {
+    font-weight: 500;
+    font-size: 1rem;
+    padding: 0 1px;
+    color: var(--dark);
+    background-color: var(--white);
+    border: 1px solid var(--dark);
+}
+
+@media screen and (max-width:768px) {
+    .form-container {
+        width: 90%;
+    }
+}
