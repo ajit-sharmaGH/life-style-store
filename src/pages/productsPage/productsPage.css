@@ -1,3 +1,37 @@
 .products_filter_display-flex {
     display: flex;
+    height: 100vh;
+    background-color: var(--dark-primary-text);
+}
+
+.products_filter {
+    overflow: auto;
+    overflow-x: hidden;
+    margin-top: 4rem;
+}
+
+.products_card {
+    width: 100%;
+    margin-top: 4rem;
+    overflow: auto;
+    overflow-x: hidden;
+}
+
+.products_card::-webkit-scrollbar {
+    width: 0px;
+    height: 0px;
+}
+
+.products_filter::-webkit-scrollbar {
+    width: 0px;
+    height: 0px;
+}
+
+@media screen and (max-width:768px) {
+    .products_card {
+        padding-top: 3.5rem;
+    }
+    .products_filter {
+        margin-top: 5.5rem;
+    }
 }

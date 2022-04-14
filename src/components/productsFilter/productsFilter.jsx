@@ -3,12 +3,12 @@ import { useProductsFilter } from "../../context/filter-context.js";
 const ProductsFilter = () => {
   const { state, dispatch } = useProductsFilter();
   return (
-    <div className="sidebar-link">
-      <div class="price-filter filter">
+    <div className="lifestyleStore_sidebar-link">
+      <div>
         <button onClick={() => dispatch({ type: "CLEAR_ALL" })}>
           Clear All
         </button>
-        <h2 class="headings">Range</h2>
+        <h2 className="filter_heading">Range</h2>
         <p>
           <input
             type="number"
@@ -29,8 +29,8 @@ const ProductsFilter = () => {
           </span>
         </p>
       </div>
-      <div class="Category-filter filter">
-        <h2 class="headings">Category</h2>
+      <div>
+        <h2 className="filter_heading">Category</h2>
 
         <p>
           <input
@@ -71,8 +71,8 @@ const ProductsFilter = () => {
           &nbsp;Kids-Wear
         </p>
       </div>
-      <div class="ratings-filter filter">
-        <h2 class="headings">Ratings</h2>
+      <div>
+        <h2 className="filter_heading">Ratings</h2>
         <p>
           <input
             type="radio"
@@ -80,7 +80,7 @@ const ProductsFilter = () => {
             checked={state.rating === 4}
             onChange={() => dispatch({ type: "RATING", payload: 4 })}
           />
-          &nbsp;4&nbsp;<i class="fa-solid fa-star"></i>&&nbsp;Above
+          &nbsp;4&nbsp;<i className="fa-solid fa-star"></i>&&nbsp;Above
         </p>
         <p>
           <input
@@ -89,7 +89,7 @@ const ProductsFilter = () => {
             checked={state.rating === 3}
             onChange={() => dispatch({ type: "RATING", payload: 3 })}
           />
-          &nbsp;3&nbsp;<i class="fa-solid fa-star"></i>&&nbsp;Above
+          &nbsp;3&nbsp;<i className="fa-solid fa-star"></i>&&nbsp;Above
         </p>
 
         <p>
@@ -99,7 +99,7 @@ const ProductsFilter = () => {
             checked={state.rating === 2}
             onChange={() => dispatch({ type: "RATING", payload: 2 })}
           />
-          &nbsp;2&nbsp;<i class="fa-solid fa-star"></i>&&nbsp;Above
+          &nbsp;2&nbsp;<i className="fa-solid fa-star"></i>&&nbsp;Above
         </p>
         <p>
           <input
@@ -111,7 +111,7 @@ const ProductsFilter = () => {
           &nbsp;1&nbsp;<i class="fa-solid fa-star"></i>&&nbsp;Above
         </p>
         <div>
-          <h3 className="headings">Sort By Price</h3>
+          <h3 className="filter_heading">Sort By Price</h3>
           <p>
             <input
               type="radio"
