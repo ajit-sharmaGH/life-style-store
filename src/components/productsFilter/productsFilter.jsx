@@ -9,7 +9,7 @@ const ProductsFilter = () => {
           Clear All
         </button>
         <h2 className="filter_heading">Range</h2>
-        <p>
+        <div>
           <input
             type="number"
             name="price"
@@ -27,12 +27,12 @@ const ProductsFilter = () => {
             <label>min: Rs/- 250 </label>
             <label>max: Rs/- 10k</label>
           </span>
-        </p>
+        </div>
       </div>
       <div>
         <h2 className="filter_heading">Category</h2>
 
-        <p>
+        <div>
           <input
             type="checkbox"
             name=""
@@ -40,8 +40,8 @@ const ProductsFilter = () => {
             onChange={() => dispatch({ type: "CATEGORY", payload: "menWear" })}
           />
           &nbsp;Men-Wear
-        </p>
-        <p>
+        </div>
+        <div>
           <input
             type="checkbox"
             name=""
@@ -51,8 +51,8 @@ const ProductsFilter = () => {
             }
           />
           &nbsp;Women-Wear
-        </p>
-        <p>
+        </div>
+        <div>
           <input
             type="checkbox"
             name=""
@@ -60,8 +60,8 @@ const ProductsFilter = () => {
             onChange={() => dispatch({ type: "CATEGORY", payload: "gadgets" })}
           />
           &nbsp;Gadgets
-        </p>
-        <p>
+        </div>
+        <div>
           <input
             type="checkbox"
             name=""
@@ -69,7 +69,7 @@ const ProductsFilter = () => {
             onChange={() => dispatch({ type: "CATEGORY", payload: "kidsWear" })}
           />
           &nbsp;Kids-Wear
-        </p>
+        </div>
       </div>
       <div>
         <h2 className="filter_heading">Ratings</h2>
@@ -92,7 +92,7 @@ const ProductsFilter = () => {
           &nbsp;3&nbsp;<i className="fa-solid fa-star"></i>&&nbsp;Above
         </p>
 
-        <p>
+        <div>
           <input
             type="radio"
             name="rating"
@@ -100,8 +100,8 @@ const ProductsFilter = () => {
             onChange={() => dispatch({ type: "RATING", payload: 2 })}
           />
           &nbsp;2&nbsp;<i className="fa-solid fa-star"></i>&&nbsp;Above
-        </p>
-        <p>
+        </div>
+        <div>
           <input
             type="radio"
             name="rating"
@@ -109,10 +109,10 @@ const ProductsFilter = () => {
             onChange={() => dispatch({ type: "RATING", payload: 1 })}
           />
           &nbsp;1&nbsp;<i class="fa-solid fa-star"></i>&&nbsp;Above
-        </p>
+        </div>
         <div>
           <h3 className="filter_heading">Sort By Price</h3>
-          <p>
+          <div>
             <input
               type="radio"
               name="lowToHigh"
@@ -122,8 +122,8 @@ const ProductsFilter = () => {
               }
             />
             &nbsp;Price: Low to High
-          </p>
-          <p>
+          </div>
+          <div>
             <input
               type="radio"
               name="hightToLow"
@@ -133,7 +133,7 @@ const ProductsFilter = () => {
               }
             />
             &nbsp;Price: High to Low
-          </p>
+          </div>
         </div>
       </div>
     </div>

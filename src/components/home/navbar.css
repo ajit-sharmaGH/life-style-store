@@ -116,6 +116,7 @@ this is the link of the  style of  landing page of e-com !
 .side-nav-menu {
     position: fixed;
     height: 100vh;
+    overflow-y: scroll;
     width: 14rem;
     background-color: var(--nav-color);
     transition: 0.5s ease-in-out;
@@ -123,6 +124,13 @@ this is the link of the  style of  landing page of e-com !
     box-shadow: 1px 3px 8px var(--dark-primary);
     border-bottom-right-radius: 1rem;
     transform: translateX(-15.5rem);
+    overflow-x: hidden;
+    padding-bottom: 1rem;
+}
+
+.side-nav-menu::-webkit-scrollbar {
+    width: 0px;
+    height: 0px;
 }
 
 .side-nav-menu-active {
@@ -133,13 +141,13 @@ this is the link of the  style of  landing page of e-com !
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin-left: 1rem;
+    /* margin-left: 1rem; */
 }
 
 .sidebar-logo {
     font-size: 1.5rem;
     font-weight: 800;
-    margin: 1rem 1rem 1rem 0rem;
+    margin: 1rem;
     color: var(--pink);
     border-left: 3px solid var(--yellow);
     border-top: 5px solid var(--red);
@@ -147,10 +155,8 @@ this is the link of the  style of  landing page of e-com !
 }
 
 .sidebar-navlink li {
-    margin: 0.8rem;
+    margin: 1rem 0 0 1rem;
     color: var(--white);
-    width: 8rem;
-    padding: 0.3rem;
     border-radius: 0.5rem;
     font-weight: 600;
 }
@@ -174,6 +180,15 @@ this is the link of the  style of  landing page of e-com !
     }
     .products_search-bar {
         min-width: 18rem;
+    }
+}
+
+@media screen and (min-width:768px) {
+    .side-nav-menu {
+        transform: translateX(-15.5rem);
+    }
+    .sidebar_products-filter {
+        display: none;
     }
 }
 
@@ -204,5 +219,9 @@ this is the link of the  style of  landing page of e-com !
     }
     .burger-and-search {
         margin: 3px 0 1px 5px;
+    }
+    .sidebar_products-filter {
+        padding: 0;
+        margin: 1rem 0 0 1rem;
     }
 }
