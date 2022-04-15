@@ -7,7 +7,7 @@
     font-size: 1.3rem;
     font-family: monster;
     min-height: calc(100vh - 4rem);
-    padding: 2rem 0 0.5rem 1rem;
+    padding: 2rem 0.3rem 0.5rem 1rem;
 }
 
 .filter_heading {

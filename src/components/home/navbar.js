@@ -210,7 +210,7 @@ export function Navbar() {
                 checked={state.rating === 4}
                 onChange={() => dispatch({ type: "RATING", payload: 4 })}
               />
-              &nbsp;4&nbsp;⭐&&nbsp;Above
+              &nbsp;4⭐&&nbsp;Above
             </p>
             <p>
               <input
@@ -219,7 +219,7 @@ export function Navbar() {
                 checked={state.rating === 3}
                 onChange={() => dispatch({ type: "RATING", payload: 3 })}
               />
-              &nbsp;3&nbsp;⭐&&nbsp;Above
+              &nbsp;3⭐&&nbsp;Above
             </p>
 
             <p>
@@ -229,7 +229,7 @@ export function Navbar() {
                 checked={state.rating === 2}
                 onChange={() => dispatch({ type: "RATING", payload: 2 })}
               />
-              &nbsp;2&nbsp;⭐&&nbsp;Above
+              &nbsp;2⭐&&nbsp;Above
             </p>
             <p>
               <input
@@ -238,7 +238,7 @@ export function Navbar() {
                 checked={state.rating === 1}
                 onChange={() => dispatch({ type: "RATING", payload: 1 })}
               />
-              &nbsp;1&nbsp;⭐&&nbsp;Above
+              &nbsp;1⭐&&nbsp;Above
             </p>
             <div>
               <h3 className="filter_heading">Sort By Price</h3>
@@ -251,7 +251,7 @@ export function Navbar() {
                     dispatch({ type: "SORT", payload: "LOW_TO_HIGH" })
                   }
                 />
-                &nbsp;Price: Low to High
+                &nbsp;Low to High
               </p>
               <p>
                 <input
@@ -262,7 +262,7 @@ export function Navbar() {
                     dispatch({ type: "SORT", payload: "HIGH_TO_LOW" })
                   }
                 />
-                &nbsp;Price: High to Low
+                &nbsp;High to Low
               </p>
             </div>
           </div>
